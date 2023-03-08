@@ -6,17 +6,16 @@ import { Footer } from './components/Footer/Footer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
 
-
-
 function App() {
   return (
     <div className="App">
       
       <NavBar/>
       
-      <ItemListContainer greeting={"Hola Mundo"} />
+      <ItemListContainer greeting={"Tienda de Tazas"} />
       
       <Footer/>
+      
     </div>
   );
 }

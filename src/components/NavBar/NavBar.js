@@ -10,7 +10,6 @@ export const NavBar = ( )=>{
 
                 <img className='header_logo' src={logo} alt= "logo" />
 
-
                 <nav className="navbar">    
 
                     <p className="navbar_link">Home</p>
@@ -22,13 +21,9 @@ export const NavBar = ( )=>{
 
             <CartWidget/>
 
-
-
             </div>
 
         </header>
-
-
 
     )
 }

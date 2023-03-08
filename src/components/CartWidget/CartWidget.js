@@ -7,7 +7,7 @@ export const CartWidget = () =>{
         <div className="cart-widget-icon">
 
             <FaShoppingCart/>
-           
+        
             <span > 0</span>
         </div>
     )
