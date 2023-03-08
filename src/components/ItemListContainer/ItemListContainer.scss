@@ -3,4 +3,9 @@
     max-width : auto;
     height: 70vh; 
     background-color: whitesmoke;
+    .itemlistcontainer_product{
+        display: flex;
+        gap: 15px;
+    }
 }
+
