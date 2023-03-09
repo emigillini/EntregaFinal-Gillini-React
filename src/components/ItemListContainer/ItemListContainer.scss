@@ -1,10 +1,12 @@
 .itemlistcontainer{
     max-width : auto;
-    height: 70vh; 
+    height: auto ; 
     background-color: whitesmoke;
+    padding: 35px;
     .itemlistcontainer_product{
         display: flex;
         gap: 15px;
+        justify-content: space-evenly;
     }
 }
 

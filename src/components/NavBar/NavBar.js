@@ -6,7 +6,7 @@ export const NavBar = ( )=>{
     return(
         <header className="header">
             
-            <div className="header_container">
+            <div className="header_container ">
 
                 <img className='header_logo' src={logo} alt= "logo" />
 
