@@ -3,7 +3,7 @@ import './ItemListContainer.scss'
 import { CardProducto } from '../CardProducto/CardProducto'
 
 
-export const ItemListContainer=({greeting})=>{
+export const ItemListContainer=({greeting})=>{  
     return(
         <div className='itemlistcontainer container-fluid  '>
 
