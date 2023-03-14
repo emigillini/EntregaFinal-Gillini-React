@@ -21,7 +21,8 @@ function App() {
 
 
       <Clicker name={"comprar esta"}/>
-      <ItemListContainer greeting={"Tienda de Tazas"} />
+      
+      <ItemListContainer />
 
       <Footer/>
       

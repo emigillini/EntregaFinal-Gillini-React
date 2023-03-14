@@ -1,12 +1,12 @@
 import './CardProducto.scss'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import taza from "./diaptaza3.jpg"
 
-export const CardProducto = ({title, text}) => {
+
+export const CardProducto = ({title, text, img}) => {
     return (
       <Card style={{ width: '14rem' }}>
-        <Card.Img variant="top" src={taza} className="image_card"/>
+        <Card.Img variant="top" src={img} className="image_card"/>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>
