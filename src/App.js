@@ -15,14 +15,11 @@ function App() {
   return (
     <div className="App">
       
-      
       <NavBar/>
-      
-
-
+  
       <Clicker name={"comprar esta"}/>
       
-      <ItemListContainer />
+      <ItemListContainer > </ItemListContainer>ItemListContainer
 
       <Footer/>
       
