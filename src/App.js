@@ -6,6 +6,7 @@ import { Footer } from './components/Footer/Footer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 //import { Clicker } from './components/Clicker/Clicker';
 import { Pokeappi } from './components/Pokeappi/Pokeappi';
+//import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 
