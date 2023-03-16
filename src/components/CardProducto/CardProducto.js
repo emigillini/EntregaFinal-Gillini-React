@@ -13,7 +13,8 @@ export const CardProducto = ({title, text, img}) => {
           <Card.Text>
             {text}
           </Card.Text>
-          <Button variant="primary">Comprar</Button>
+          <Button className="button"variant="primary">Comprar</Button>
+          <Button className="button" variant="primary">Eliminar</Button>
         </Card.Body>
       </Card>
     );

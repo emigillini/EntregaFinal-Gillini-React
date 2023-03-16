@@ -26,7 +26,7 @@ export const ItemListContainer=()=>{
     },[])
     
     return(
-        <div className='itemlistcontainer container fluid '>
+        <div className='itemlistcontainer container-fluid '>
 
         <h2>Tienda de Tazas</h2>
         
@@ -37,7 +37,7 @@ export const ItemListContainer=()=>{
         
                 {productos.map((prods)=>(
         
-                <div key={prods.id} className='itemlistcontainer_product container-fluid col-3 mb-3 '>  
+                <div key={prods.id} className='itemlistcontainer_product  col pb-2 '>  
         
                 <CardProducto title ={prods.name} text={prods.precio} img={prods.img}/>
         
