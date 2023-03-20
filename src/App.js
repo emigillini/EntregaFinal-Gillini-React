@@ -5,7 +5,8 @@ import { NavBar } from './components/NavBar/NavBar';
 import { Footer } from './components/Footer/Footer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 //import { Clicker } from './components/Clicker/Clicker';
-import { Pokeappi } from './components/Pokeappi/Pokeappi';
+//import { Pokeappi } from './components/Pokeappi/Pokeappi';
+import { Banner } from './components/Banner/Banner';
 //import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -17,12 +18,13 @@ function App() {
     <div className="App">
       
       <NavBar/>
-      <Pokeappi/>
+      <Banner discountAmount={20} couponCode={"Cupon1234"}/>
+      {/*<Pokeappi/>*/}
       
   
       {/*<Clicker name={"comprar esta"}/>*/}
       
-      <ItemListContainer > </ItemListContainer>ItemListContainer
+      <ItemListContainer > </ItemListContainer>
 
       <Footer/>
       

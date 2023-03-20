@@ -28,7 +28,7 @@ export const ItemListContainer=()=>{
     return(
         <div className='itemlistcontainer container-fluid '>
 
-        <h2>Tienda de Tazas</h2>
+        <h2 className='titulo'>Tienda de Tazas Carolinska ¡Bienvenido!</h2>
         
         {
             loading

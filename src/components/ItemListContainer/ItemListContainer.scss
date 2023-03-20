@@ -3,6 +3,10 @@
     height: auto ; 
     background-color: whitesmoke;
     padding: 35px;
+    .titulo{
+        font-size: 25px;
+        padding: 10px;
+    }
     .itemlistcontainer_product{
         display: flex;
         gap: 15px;
