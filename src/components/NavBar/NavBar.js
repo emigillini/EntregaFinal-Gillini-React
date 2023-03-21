@@ -14,7 +14,7 @@ export const NavBar = ( )=>{
 
                 <nav className="navbar">    
 
-                    <Link className="navbar_link" to={"/"}>Home</Link>
+                    <Link className="navbar_link" to={"/"}>Productos</Link>
                     <Link className="navbar_link" to={"./Nosotros"}>Nosotros</Link>
                     <Link className="navbar_link" to={"./Formul"}>Contacto</Link>
                     

@@ -4,12 +4,15 @@ import { CardProducto } from '../CardProducto/CardProducto';
 import { useEffect, useState } from 'react';
 import { pedirProd } from '../../helpers/pedirDatos';
 import {ColorRing} from 'react-loader-spinner'
+import { useParams } from 'react-router';
 
 
 export const ItemListContainer=()=>{  
 
     const [productos, setProductos]= useState([]);
     const [loading, setLoading]= useState(true);
+    const params = useParams()
+    console.log(params)
 
     useEffect(()=>{
         setLoading(true)

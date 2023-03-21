@@ -7,7 +7,7 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 //import { Clicker } from './components/Clicker/Clicker';
 //import { Pokeappi } from './components/Pokeappi/Pokeappi';
 import { Banner } from './components/Banner/Banner';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Formul } from './components/Formul/Formul';
 
@@ -30,7 +30,7 @@ function App() {
       <Route exact path='/' element={<ItemListContainer/> }/>
       <Route exact path='/Nosotros' element={<Nosotros/> }/>
       <Route exact path='/Formul' element={<Formul/> }/>
-      <Route path="*" element={<ItemListContainer/>} />
+      <Route path="*" element={ <Navigate to={"/"} />}/>
       
       
       </Routes>

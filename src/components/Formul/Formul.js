@@ -1,11 +1,26 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Formul.scss'
+import { ColorRing } from 'react-loader-spinner';
+import React, { useState, useEffect } from 'react';
 
 export const Formul= ()=> {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+        setLoading(false);
+    }, 2000);
+}, []);
   
   return (
-    <Form className='formulario'>
+    <div>
+      {
+
+        loading
+            ?<ColorRing height={250} width={250} />
+            : <div>
+              <Form className='formulario'>
       <Form.Group className="mb-3" controlId="Name">
         <Form.Label className='label'>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter Name" />
@@ -40,6 +55,9 @@ export const Formul= ()=> {
         Submit
       </Button>
     </Form>
+    </div>
+      }
+  </div>    
   );
 }
 
