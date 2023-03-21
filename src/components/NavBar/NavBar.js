@@ -1,6 +1,8 @@
 import './NavBar.scss'
 import logo from './logo-caro-modified.png'
 import { CartWidget } from '../CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
+
 
 export const NavBar = ( )=>{
     return(
@@ -12,11 +14,10 @@ export const NavBar = ( )=>{
 
                 <nav className="navbar">    
 
-                    <p className="navbar_link">Home</p>
-                    <p className="navbar_link">Productos</p>
-                    <p className="navbar_link">Nuestra Historia</p>
-                    <p className="navbar_link">Contacto</p>
-
+                    <Link className="navbar_link" to={"/"}>Home</Link>
+                    <Link className="navbar_link" to={"./Nosotros"}>Nosotros</Link>
+                    <Link className="navbar_link" to={"./Formul"}>Contacto</Link>
+                    
                 </nav>
 
             <CartWidget/>

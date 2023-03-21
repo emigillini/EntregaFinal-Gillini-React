@@ -7,6 +7,7 @@ export const Footer= ( )=>{
 
             <nav className="footer_redes">
 
+                
                 <p className="footer_redes_links"><FaFacebookSquare /> </p>
 
                 <p className="footer_redes_links"><FaWhatsappSquare /> </p>

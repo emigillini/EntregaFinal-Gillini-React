@@ -12,13 +12,13 @@ import taza10 from '../imagenes/diaptaza4.jpg'
 
 
 export const data=[
-    {id:1, name: "taza1", precio: 1000 ,img: taza1},
-    {id:2, name: "taza2", precio: 1000 ,img:taza2},
-    {id:3, name: "taza3", precio: 1000 ,img:taza3},
-    {id:4, name: "taza4", precio: 1000 ,img:taza4},
-    {id:5, name: "taza5", precio: 1000 ,img:taza10},
-    {id:6, name: "taza6", precio: 1000 ,img:taza6},
-    {id:7, name: "taza7", precio: 1000 ,img:taza7},
-    {id:8, name: "taza8", precio: 1000 ,img:taza8},
-    {id:8, name: "taza9", precio: 1000 ,img:taza9},
-    {id:8, name: "taza10", precio: 1000 ,img:taza5}]
+    {id:1, name: "taza1", precio: 1000 ,img: taza1, categoria: "Modernas"},
+    {id:2, name: "taza2", precio: 1000 ,img:taza2, categoria: "Modernas"},
+    {id:3, name: "taza3", precio: 1000 ,img:taza3, categoria: "Modernas"},
+    {id:4, name: "taza4", precio: 1000 ,img:taza4, categoria: "Clasicas"},
+    {id:5, name: "taza5", precio: 1000 ,img:taza10, categoria: "Infantiles"},
+    {id:6, name: "taza6", precio: 1000 ,img:taza6, categoria: "Clasicas"},
+    {id:7, name: "taza7", precio: 1000 ,img:taza7, categoria: "Infantiles"},
+    {id:8, name: "taza8", precio: 1000 ,img:taza8, categoria: "Clasicas"},
+    {id:8, name: "taza9", precio: 1000 ,img:taza9, categoria: "Infantiles"},
+    {id:8, name: "taza10", precio: 1000 ,img:taza5, categoria: "Clasicas"}]
