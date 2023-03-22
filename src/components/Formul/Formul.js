@@ -18,30 +18,31 @@ export const Formul= ()=> {
       {
 
         loading
-            ?<ColorRing height={250} width={250} />
+            ?<div>
+            <br/>
+            <br/>
+            <h2>Contacto</h2>
+            <br/>
+            <br/>
+            <ColorRing height={250} width={250} />
+            </div>
             : <div>
               <Form className='formulario'>
-      <Form.Group className="mb-3" controlId="Name">
-        <Form.Label className='label'>Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter Name" />
-        <Form.Text className="text-muted">
-        
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className='label'>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          
-        </Form.Text>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="Adress">
-        <Form.Label className='label'>Address</Form.Label>
-        <Form.Control type="text" placeholder="Enter Adress" />
-        <Form.Text className="text-muted">
-          
-        </Form.Text>
-      </Form.Group>
+                <Form.Group className="mb-3" controlId="Name">
+                  <Form.Label className='label'>Name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Name" />
+                  <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className='label'>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="Adress">
+                  <Form.Label className='label'>Address</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Adress" />
+                  <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
       
 
       <Form.Group className="mb-3" controlId="formBasicPassword">

@@ -1,21 +1,26 @@
 import './CardProducto.scss'
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 
 
-export const CardProducto = ({title, text, img}) => {
+export const CardProducto = ({title, text, img, cat, id}) => {
     return (
       <Card style={{ width: '14rem' }} className= "card_container">
+        
         <Card.Img variant="top" src={img} className="image_card"/>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
+  
           <Card.Text>
-            {text}
+            Precio ={text}
           </Card.Text>
-          <Button className="button"variant="primary">Comprar</Button>
-          <Button className="button" variant="primary">Eliminar</Button>
+          <Card.Text className='text'>Categoria = {cat}</Card.Text>
+          <Link to={`/detail/${id}`} className="btn btn-primary" variant="primary">VER MAS</Link>
+          
+          
         </Card.Body>
+        
       </Card>
     );
   }

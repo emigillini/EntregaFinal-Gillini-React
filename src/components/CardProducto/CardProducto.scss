@@ -1,7 +1,8 @@
 
 .card_container{
     width: 300px;
-    height: 320px;
+    height: 360px;
+    box-shadow: 4px 6px;
 }
 .image_card{
     width: 200px;
@@ -12,4 +13,7 @@
 .button{
     padding: 5px;
     margin: 3px;
+}
+.text{
+    font-size: 10px;
 }

@@ -17,7 +17,18 @@ export const Nosotros = () => {
             
             {
                 loading
-                    ? <ColorRing height={250} width={250} />
+                    ?   <div>
+                        <br/>
+                        
+                    
+                        <h2>Nosotros</h2>
+                        <ColorRing height={250} width={250} 
+                        />
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        </div>
                     : <div>
                         
                         <CarouselNav />

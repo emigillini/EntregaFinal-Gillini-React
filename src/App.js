@@ -10,6 +10,7 @@ import { Banner } from './components/Banner/Banner';
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Formul } from './components/Formul/Formul';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 
@@ -27,10 +28,13 @@ function App() {
 
       <Routes>
       
-      <Route exact path='/' element={<ItemListContainer/> }/>
-      <Route exact path='/Nosotros' element={<Nosotros/> }/>
-      <Route exact path='/Formul' element={<Formul/> }/>
-      <Route path="*" element={ <Navigate to={"/"} />}/>
+      <Route path='/' element={<ItemListContainer/> }/>
+      <Route path='/Nosotros' element={<Nosotros/> }/>
+      <Route path='/Productos' element={<ItemListContainer/> }/>
+      <Route path='/Productos/:categoryId' element={<ItemListContainer/> }/>
+      <Route path='/Formul' element={<Formul/> }/>
+      <Route path='/Detail/:itemId' element={<ItemDetailContainer/> }/>
+     <Route path="*" element={ <Navigate to={"/"} />}/>
       
       
       </Routes>

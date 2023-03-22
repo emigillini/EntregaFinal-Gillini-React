@@ -11,14 +11,20 @@ export const ItemListContainer=()=>{
 
     const [productos, setProductos]= useState([]);
     const [loading, setLoading]= useState(true);
-    const params = useParams()
-    console.log(params)
+
+    const {categoryId} = useParams()
+    console.log({categoryId})
 
     useEffect(()=>{
         setLoading(true)
         pedirProd()
         .then((res)=>{
+            if (categoryId){
+                setProductos(res.filter((prod)=>prod.categoria === categoryId))
+        }  else{
             setProductos(res)
+        }
+            
         })
         .catch((rech)=>{
             console.log(rech)
@@ -26,7 +32,7 @@ export const ItemListContainer=()=>{
         .finally(()=>{
             setLoading(false)
         })
-    },[])
+    },[categoryId])
     
     return(
         <div className='itemlistcontainer container-fluid '>
@@ -35,14 +41,18 @@ export const ItemListContainer=()=>{
         
         {
             loading
-                ?<ColorRing height={250} width={250}/>
+                ?<div>
+                    <br/>
+                    <ColorRing height={250} width={250} />
+                </div>
+                
                 :<div className=' row '> 
         
                 {productos.map((prods)=>(
         
                 <div key={prods.id} className='itemlistcontainer_product  col pb-2 '>  
         
-                <CardProducto title ={prods.name} text={prods.precio} img={prods.img}/>
+                <CardProducto title ={prods.name} text={prods.precio} img={prods.img} cat={prods.categoria} id={prods.id}/>
         
                 </div>
         
