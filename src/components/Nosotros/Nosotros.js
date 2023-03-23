@@ -19,8 +19,6 @@ export const Nosotros = () => {
                 loading
                     ?   <div>
                         <br/>
-                        
-                    
                         <h2>Nosotros</h2>
                         <ColorRing height={250} width={250} 
                         />
@@ -30,7 +28,6 @@ export const Nosotros = () => {
                         <br/>
                         </div>
                     : <div>
-                        
                         <CarouselNav />
                     </div>
             }

@@ -1,4 +1,3 @@
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from './components/NavBar/NavBar';
@@ -13,8 +12,6 @@ import { Formul } from './components/Formul/Formul';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 
-
-
 function App() {
   
   return (
@@ -24,17 +21,15 @@ function App() {
       <NavBar/>
       <Banner discountAmount={20} couponCode={"Cupon1234"}/>
       
-
       <Routes>
-      
+
       <Route path='/' element={<ItemListContainer/> }/>
       <Route path='/Nosotros' element={<Nosotros/> }/>
       <Route path='/Productos' element={<ItemListContainer/> }/>
       <Route path='/Productos/:categoryId' element={<ItemListContainer/> }/>
       <Route path='/Formul' element={<Formul/> }/>
       <Route path='/Detail/:itemId' element={<ItemDetailContainer/> }/>
-     <Route path="*" element={ <Navigate to={"/"} />}/>
-      
+      <Route path="*" element={ <Navigate to={"/"} />}/>
       
       </Routes>
 

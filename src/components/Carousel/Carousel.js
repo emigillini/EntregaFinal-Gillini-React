@@ -26,7 +26,6 @@ export const CarouselNav = () =>{
           src= {fondo2}
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3 className='carousel_titulo'>CAROLINSKA TU MUNDO</h3>
           <p className='carousel_texto'>EN EL AÑO 2016 COMENZAMOS NUESTRO RECORRIDO CON UN CLARO OBJETIVO: ALEGRAR TUS MOMENTOS</p>
@@ -38,7 +37,6 @@ export const CarouselNav = () =>{
           src= {fondo3}
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3 className='carousel_titulo'>CAROLINSKA TU MUNDO</h3>
           <p className='carousel_texto'>
