@@ -33,10 +33,12 @@ export const ItemListContainer=()=>{
             setLoading(false)
         })
     },[categoryId])
+
     
     return(
-        <div className='itemlistcontainer container-fluid '>
-
+       
+        <div className='itemlistcontainer container-fluid ' >
+        
         <h2 className='titulo'>Tienda de Tazas Carolinska ¡Bienvenido!</h2>
         
         {
@@ -52,7 +54,8 @@ export const ItemListContainer=()=>{
         
                 <div key={prods.id} className='itemlistcontainer_product  col pb-2 '>  
         
-                <CardProducto title ={prods.name} text={prods.precio} img={prods.img} cat={prods.categoria} id={prods.id}/>
+                <CardProducto title ={prods.name}  text={prods.precio} img={prods.img} cat={prods.categoria} id={prods.id} stock={prods.stock} item={prods}/>
+               
         
                 </div>
         

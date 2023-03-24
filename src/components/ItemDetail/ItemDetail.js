@@ -1,7 +1,9 @@
 import './ItemDetail.scss'
+import { ItemCount } from '../ItemCount/ItemCount';
 
 export const ItemDetail = ({ item }) => {
     console.log(item);
+   
     return (
         
         <div className=' container container_detail' >
@@ -11,6 +13,7 @@ export const ItemDetail = ({ item }) => {
                 <h3 className="texto ">{item.name}</h3>  
                 <p className="texto">{item.description}</p>
                 <small>Precio :{item.precio}</small>
+                <ItemCount max={item.stock} item={item}/>
             </div>
             </div>
         </div>

@@ -12,8 +12,11 @@ import { Formul } from './components/Formul/Formul';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 
+
+
 function App() {
-  
+
+
   return (
     <BrowserRouter>
     <div className="App">

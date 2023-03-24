@@ -12,6 +12,7 @@ export const Nosotros = () => {
         }, 2000);
     }, []);
 
+
     return (
         <div>
             
