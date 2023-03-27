@@ -1,9 +1,23 @@
 import './ItemDetail.scss'
 import { ItemCount } from '../ItemCount/ItemCount';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../context/cartContext';
 
 export const ItemDetail = ({ item }) => {
-    console.log(item);
-   
+    
+    let[cantidad, setCantidad]=useState(1)
+    const {cart, setCart}=useContext(CartContext) 
+    const agregar =()=>{
+        const itemCarrito ={
+            ...item,
+            cantidad,
+            
+        }
+    setCart([...cart, itemCarrito])
+
+
+console.log(itemCarrito)
+    }
     return (
         
         <div className=' container container_detail' >
@@ -13,7 +27,7 @@ export const ItemDetail = ({ item }) => {
                 <h3 className="texto ">{item.name}</h3>  
                 <p className="texto">{item.description}</p>
                 <small>Precio :{item.precio}</small>
-                <ItemCount max={item.stock} item={item}/>
+                <ItemCount max={item.stock} item={item} cantidad={cantidad} setCantidad={setCantidad} agregar={agregar}/>
             </div>
             </div>
         </div>

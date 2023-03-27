@@ -7,10 +7,12 @@ import {ColorRing} from 'react-loader-spinner'
 import { useParams } from 'react-router';
 
 
+
 export const ItemListContainer=()=>{  
 
     const [productos, setProductos]= useState([]);
     const [loading, setLoading]= useState(true);
+    
 
     const {categoryId} = useParams()
     console.log({categoryId})
@@ -54,7 +56,7 @@ export const ItemListContainer=()=>{
         
                 <div key={prods.id} className='itemlistcontainer_product  col pb-2 '>  
         
-                <CardProducto title ={prods.name}  text={prods.precio} img={prods.img} cat={prods.categoria} id={prods.id} stock={prods.stock} item={prods}/>
+                <CardProducto title ={prods.name}  text={prods.precio} img={prods.img} cat={prods.categoria} id={prods.id} stock={prods.stock} item={prods} />
                
         
                 </div>

@@ -10,14 +10,20 @@ import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Formul } from './components/Formul/Formul';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { CartContext } from './context/cartContext';
+import {useState } from 'react';
+
 
 
 
 
 function App() {
+  const [cart , setCart]=useState(0)
+  
 
-
+   
   return (
+    <CartContext.Provider value={{cart, setCart}}>
     <BrowserRouter>
     <div className="App">
       
@@ -40,6 +46,7 @@ function App() {
       
     </div>
     </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 

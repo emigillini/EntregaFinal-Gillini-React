@@ -1,11 +1,11 @@
-import {  useState } from "react"
+
 import './ItemCount.scss'
 
 
 
 
-export const ItemCount=({max, item})=>{
-    let[cantidad, setCantidad]=useState(1)
+export const ItemCount=({max, cantidad, setCantidad, agregar})=>{
+    
 
     const sumarClick = () =>{
         if(cantidad<max){ setCantidad(cantidad+1)};
@@ -18,14 +18,7 @@ export const ItemCount=({max, item})=>{
             setCantidad(cantidad-1);
         }
     }
-    const agregar =()=>{
-        const itemCarrito ={
-            ...item,
-            cantidad,
-            
-        }
-console.log(itemCarrito)
-    }
+    
 
     
 return(
