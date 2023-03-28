@@ -1,22 +1,23 @@
 import './ItemDetail.scss'
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useContext, useState } from 'react';
-import { CartContext } from '../../context/cartContext';
+import { CartContext } from '../../context/CartContext';
 
 export const ItemDetail = ({ item }) => {
     
     let[cantidad, setCantidad]=useState(1)
-    const {cart, setCart}=useContext(CartContext) 
+
+    const {sumarCarrito}=useContext(CartContext) 
+
     const agregar =()=>{
         const itemCarrito ={
             ...item,
             cantidad,
             
         }
-    setCart([...cart, itemCarrito])
+   sumarCarrito(itemCarrito)
 
 
-console.log(itemCarrito)
     }
     return (
         

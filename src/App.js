@@ -3,14 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from './components/NavBar/NavBar';
 import { Footer } from './components/Footer/Footer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-//import { Clicker } from './components/Clicker/Clicker';
-//import { Pokeappi } from './components/Pokeappi/Pokeappi';
 import { Banner } from './components/Banner/Banner';
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Formul } from './components/Formul/Formul';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import { CartContext } from './context/cartContext';
+import { CartContext } from './context/CartContext';
 import {useState } from 'react';
 
 
@@ -18,12 +16,18 @@ import {useState } from 'react';
 
 
 function App() {
-  const [cart , setCart]=useState(0)
+  const [cart , setCart]=useState([])
   
+  console.log(cart)
+
+  const sumarCarrito =(itemCarrito)=>{
+    setCart([...cart , itemCarrito ])
+  }
+  //ACA POER SWEET ALERT//
 
    
   return (
-    <CartContext.Provider value={{cart, setCart}}>
+    <CartContext.Provider value={{cart, sumarCarrito}}>
     <BrowserRouter>
     <div className="App">
       

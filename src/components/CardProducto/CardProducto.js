@@ -2,23 +2,24 @@ import './CardProducto.scss'
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { ItemCount } from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 
 
 
 export const CardProducto = ({title, text, img, cat, id, stock, item}) => {
   let[cantidad, setCantidad]=useState(1)
-  
+  const {sumarCarrito}=useContext(CartContext) 
+
   const agregar =()=>{
-      const itemCarrito ={
-          ...item,
-          cantidad,
-          
-      }
+    const itemCarrito ={
+        ...item,
+        cantidad,
+        
+    }
+sumarCarrito(itemCarrito)
 
-
-console.log(itemCarrito)
   }
  
     return (
