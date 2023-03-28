@@ -8,26 +8,15 @@ import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { Formul } from './components/Formul/Formul';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import { CartContext } from './context/CartContext';
-import {useState } from 'react';
-
-
+import { CartProvider } from './context/CartContext';
+import { Cart } from './components/Cart/Cart';
 
 
 
 function App() {
-  const [cart , setCart]=useState([])
   
-  console.log(cart)
-
-  const sumarCarrito =(itemCarrito)=>{
-    setCart([...cart , itemCarrito ])
-  }
-  //ACA POER SWEET ALERT//
-
-   
   return (
-    <CartContext.Provider value={{cart, sumarCarrito}}>
+    <CartProvider>
     <BrowserRouter>
     <div className="App">
       
@@ -39,6 +28,7 @@ function App() {
       <Route path='/' element={<ItemListContainer/> }/>
       <Route path='/Nosotros' element={<Nosotros/> }/>
       <Route path='/Productos' element={<ItemListContainer/> }/>
+      <Route path='/Cart' element={<Cart/> }/>
       <Route path='/Productos/:categoryId' element={<ItemListContainer/> }/>
       <Route path='/Formul' element={<Formul/> }/>
       <Route path='/Detail/:itemId' element={<ItemDetailContainer/> }/>
@@ -50,7 +40,8 @@ function App() {
       
     </div>
     </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
+ 
   );
 }
 

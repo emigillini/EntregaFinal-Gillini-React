@@ -6,11 +6,10 @@ import { useState, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 
-
-
 export const CardProducto = ({title, text, img, cat, id, stock, item}) => {
   let[cantidad, setCantidad]=useState(1)
-  const {sumarCarrito}=useContext(CartContext) 
+  let {sumarCarrito, isInCart}=useContext(CartContext) 
+  console.log(isInCart(item.id)) 
 
   const agregar =()=>{
     const itemCarrito ={
@@ -30,9 +29,17 @@ sumarCarrito(itemCarrito)
           <Card.Text>Precio ={text}</Card.Text>
           <Link to={`/detail/${id}`} className="btn btn-primary btn-lg ver_mas" >VER MAS</Link>
           <Card.Text className='text'>Categoria = {cat}</Card.Text>
-          <ItemCount max={stock} item={item} cantidad={cantidad} setCantidad={setCantidad} agregar={agregar}/>
+          {
+            isInCart(item.id)
+              ?<Link to={"/cart"} className="btn btn-primary">Terminar</Link>  
+              :<ItemCount max={stock} item={item} cantidad={cantidad} setCantidad={setCantidad} agregar={agregar}/>
+
+          }
+          
+          
         </Card.Body>
       </Card>
     );
   }
+  
   
