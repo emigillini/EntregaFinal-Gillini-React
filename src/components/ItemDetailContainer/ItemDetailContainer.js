@@ -11,10 +11,10 @@ export const ItemDetailContainer=()=>{
     const [loading, SetLoading]= useState(true)
     const {itemId} =useParams()
 
- useEffect(()=>{
+    useEffect(()=>{
     SetLoading(true)
 
-   pedirProd()
+    pedirProd()
         .then((res)=>{
             SetItem(res.find((prod)=> prod.id === Number(itemId)))
         })

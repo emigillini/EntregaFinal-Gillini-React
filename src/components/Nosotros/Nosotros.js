@@ -11,8 +11,7 @@ export const Nosotros = () => {
             setLoading(false);
         }, 2000);
     }, []);
-
-
+    
     return (
         <div>
             

@@ -57,7 +57,7 @@ export const ItemListContainer=()=>{
                 <div key={prods.id} className='itemlistcontainer_product  col pb-2 '>  
         
                 <CardProducto title ={prods.name}  text={prods.precio} img={prods.img} cat={prods.categoria} id={prods.id} stock={prods.stock} item={prods} />
-               
+            
         
                 </div>
         

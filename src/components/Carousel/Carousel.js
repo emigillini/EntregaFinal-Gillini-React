@@ -7,7 +7,7 @@ import  "./Carousel.scss"
 export const CarouselNav = () =>{
     
   return (
-   
+  
     <Carousel fade variant='dark'>
       <Carousel.Item className='cuadro_deslizable'>
         <img
