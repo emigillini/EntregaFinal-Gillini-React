@@ -8,7 +8,7 @@ export const ItemDetail = ({ item }) => {
     
     let[cantidad, setCantidad]=useState(1)
 
-   let {sumarCarrito, isInCart}=useContext(CartContext) 
+    let {sumarCarrito, isInCart}=useContext(CartContext) 
     console.log(isInCart(item.id)) 
 
     const agregar =()=>{
@@ -17,8 +17,7 @@ export const ItemDetail = ({ item }) => {
             cantidad,
             
         }
-   sumarCarrito(itemCarrito)
-
+    sumarCarrito(itemCarrito)
 
     }
     return (

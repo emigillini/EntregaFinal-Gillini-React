@@ -1,8 +1,5 @@
 import './ItemCount.scss'
 
-
-
-
 export const ItemCount=({max, cantidad, setCantidad, agregar})=>{
     
 
@@ -18,8 +15,6 @@ export const ItemCount=({max, cantidad, setCantidad, agregar})=>{
         }
     }
     
-
-    
 return(
     <div>
 
@@ -28,7 +23,6 @@ return(
     <button onClick={sumarClick} className="btn  btn-primary m-1 ver_mas" >+</button>
     <button  onClick={agregar} className="btn  btn-primary m-1 ver_mas" >AGREGAR</button>
     
-   
     </div>
 )
 
