@@ -10,11 +10,22 @@ import { Formul } from './components/Formul/Formul';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartProvider } from './context/CartContext';
 import { Cart } from './components/Cart/Cart';
+import Swal from 'sweetalert2'
+
 
 
 
 function App() {
   
+ 
+  Swal.fire({
+    title: 'Sweet!',
+    text: 'Modal with a custom image.',
+    imageUrl: 'https://unsplash.it/400/200',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
   return (
     <CartProvider>
     <BrowserRouter>
