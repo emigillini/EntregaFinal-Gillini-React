@@ -1,6 +1,9 @@
 import { useContext, useState } from 'react'
 import './LoginScreen.scss'
 
+
+
+
 import Swal from 'sweetalert2'
 import { LoginContext } from '../../context/LoginContext'
 
@@ -41,7 +44,7 @@ export const LoginScreen=()=>{
         Swal.fire({
             title: 'Estas ingresando al Market Place',
             text: "Confirme para ingresar",
-            icon: 'info',
+         icon: "question",
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
