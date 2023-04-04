@@ -28,14 +28,18 @@ export const ItemDetail = ({ item }) => {
             <div className='col-8'>  
                 <h3 className="texto ">{item.name}</h3>  
                 <p className="texto">{item.description}</p>
-                <small>Precio :{item.precio}</small>
+                
+                <small className='detail_precio'>Precio : ${item.precio} </small>
+                
+               
                 {
                     isInCart(item.id)
-                    ?<Link to={"/cart"} className="btn btn-primary">Terminar</Link>
+                    ?<Link to={"/cart"} className="btn btn-primary ver_mas">Terminar</Link>
                     :<ItemCount max={item.stock} item={item} cantidad={cantidad} setCantidad={setCantidad} agregar={agregar}/>
-
+                    
                 }
-                
+               <hr/>
+               {item.stock<=15 && <small> Apurate quedan pocas unidades!!!!</small>}
                 
             </div>
             </div>

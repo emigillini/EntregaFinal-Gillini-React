@@ -18,10 +18,10 @@ export const ItemCount=({max, cantidad, setCantidad, agregar})=>{
 return(
     <div>
 
-    <button onClick={restarClick} className="btn  btn-primary m-1 ver_mas" >-</button>
+    <button onClick={restarClick} className={ cantidad>=1?"btn  btn-primary m-1 ver_mas": "btn btn-outline-danger"} >-</button>
     <span className="mx-3">{cantidad}</span>
     <button onClick={sumarClick} className="btn  btn-primary m-1 ver_mas" >+</button>
-    <button  onClick={agregar} className="btn  btn-primary m-1 ver_mas" >AGREGAR</button>
+    <button  onClick={agregar} className={ cantidad>=1?"btn  btn-primary m-1 ver_mas": "btn btn-outline-danger disabled"}  >AGREGAR</button>
     
     </div>
 )
