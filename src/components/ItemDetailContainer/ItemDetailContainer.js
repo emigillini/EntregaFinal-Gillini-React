@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { pedirProd } from "../../helpers/pedirDatos"
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { ColorRing } from "react-loader-spinner"
 import './ItemDetailContainer.scss'
+import { doc , getDoc} from "firebase/firestore"
+import { db } from "../../firebase/config"
 
 
 export const ItemDetailContainer=()=>{
@@ -14,15 +15,19 @@ export const ItemDetailContainer=()=>{
     useEffect(()=>{
     SetLoading(true)
 
-    pedirProd()
-        .then((res)=>{
-            SetItem(res.find((prod)=> prod.id === Number(itemId)))
+    const docRef = doc(db, "productos", itemId)
+   
+    getDoc(docRef)
+        .then((doc) => {
+            SetItem({
+                id: doc.id,
+                ...doc.data()
+            })
         })
-        .finally(()=>{
+        .finally(() => {
             SetLoading(false)
         })
-
-},[itemId]);
+}, [itemId])
 
 return(
     <div className="container my-5 ver">

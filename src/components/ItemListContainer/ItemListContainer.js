@@ -1,10 +1,10 @@
 import './ItemListContainer.scss'
-
 import { CardProducto } from '../CardProducto/CardProducto';
 import { useEffect, useState } from 'react';
-import { pedirProd } from '../../helpers/pedirDatos';
 import {ColorRing} from 'react-loader-spinner'
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
 
 
@@ -17,24 +17,26 @@ export const ItemListContainer=()=>{
     const {categoryId} = useParams()
     console.log({categoryId})
 
-    useEffect(()=>{
+    useEffect(() => {
         setLoading(true)
-        pedirProd()
-        .then((res)=>{
-            if (categoryId){
-                setProductos(res.filter((prod)=>prod.categoria === categoryId))
-        }  else{
-            setProductos(res)
-        }
-            
-        })
-        .catch((rech)=>{
-            console.log(rech)
-        })
-        .finally(()=>{
-            setLoading(false)
-        })
-    },[categoryId])
+
+        const prodRef = collection(db, "productos")
+        const q = categoryId 
+                    ? query(prodRef, where("categoria", "==", categoryId))
+                    : prodRef
+
+        getDocs(q)
+            .then((res) => {
+                setProductos( res.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }))
+            })
+            .finally(() => setLoading(false))
+        
+    }, [categoryId])
 
     
     return(
