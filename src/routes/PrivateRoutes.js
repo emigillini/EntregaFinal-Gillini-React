@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer/Footer';
 import { ItemListContainer } from '../components/ItemListContainer/ItemListContainer';
 import { Banner } from '../components/Banner/Banner';
 import { Routes, Route, Navigate} from 'react-router-dom';
+import { Checkout } from '../components/Checkout/Checkout';
 
 
 export const PrivateRoutes=()=>{
@@ -26,6 +27,7 @@ export const PrivateRoutes=()=>{
             <Route path='/Formul' element={<Formul/> }/>
             <Route path='/Detail/:itemId' element={<ItemDetailContainer/> }/>
             <Route path="*" element={ <Navigate to={"/"} />}/>
+            <Route path='/Checkout' element={<Checkout/> }/>
         
         </Routes>
         <Footer/>

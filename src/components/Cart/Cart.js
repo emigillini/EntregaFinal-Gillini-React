@@ -4,6 +4,7 @@ import { ColorRing } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import './Cart.scss'
 
+
 export const Cart = () => {
   const { cart, vaciarCarrito, removerItem, totalCarrito } = useContext(CartContext);
   const [loading, setLoading] = useState(true);
@@ -66,6 +67,7 @@ export const Cart = () => {
               >
                 Vaciar carrito
               </button>
+              <Link className="btn btn-succes ver_mas" to={"/Checkout"}>Terminar Compra</Link>
             </>
           )}
         </div>
