@@ -8,13 +8,14 @@ export const Footer= ( )=>{
             <nav className="footer_redes">
 
                 
-                <p className="footer_redes_links"><FaFacebookSquare /> </p>
+                <a href="https://www.facebook.com/"  className="footer_redes_links" target="_blank" rel="noopener noreferrer"><FaFacebookSquare /></a>
 
-                <p className="footer_redes_links"><FaWhatsappSquare /> </p>
+                <a href="https://web.whatsapp.com/"  className="footer_redes_links" target="_blank" rel="noopener noreferrer"><FaWhatsappSquare /></a> 
 
-                <p className="footer_redes_links"><FaTwitterSquare/> </p>
+                <a href="https://twitter.com/?lang=es"  className="footer_redes_links" target="_blank" rel="noopener noreferrer"><FaTwitterSquare/></a> 
 
-                <p className="footer_redes_links"><FaInstagramSquare /> </p>
+                <a href="https://www.instagram.com/"  className="footer_redes_links" target="_blank" rel="noopener noreferrer"><FaInstagramSquare /></a>  
+
 
             </nav>
 

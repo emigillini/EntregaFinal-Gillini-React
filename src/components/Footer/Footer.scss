@@ -6,6 +6,7 @@
         font-size: 15px;
         text-align: center;
         font-weight: 900;
+        
     }
     .footer_redes{
         max-width: 900px;
@@ -13,9 +14,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+       padding: 2%;
         .footer_redes_links{
             font-size: 30px;
             text-shadow: 5px 5px 5px rgba(174, 216, 22, 0.397);
+            text-decoration: none;
+            color: black;
             
         }
     

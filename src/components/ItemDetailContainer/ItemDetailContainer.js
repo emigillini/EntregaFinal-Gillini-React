@@ -30,7 +30,7 @@ export const ItemDetailContainer=()=>{
 }, [itemId])
 
 return(
-    <div className="container my-5 ver">
+    <div className="container my-5 ">
         {
             loading
             ?<div>

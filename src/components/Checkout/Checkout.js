@@ -16,10 +16,10 @@ export const Checkout=()=>{
     const [orderId, setOrderId]=useState(null)
 
     const [values, setValues]=useState({
-        contacto:'x',
-        email:'x',
-        telefono:'x',
-        direccion:'x'
+        contacto:'',
+        email:'',
+        telefono:'',
+        direccion:''
     })
     const handleChange=(e)=>{
         setValues({
