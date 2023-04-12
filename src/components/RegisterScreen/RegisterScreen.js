@@ -1,17 +1,13 @@
 import { useContext, useState } from 'react'
-import './LoginScreen.scss'
-
-
-
-
+import './RegisterScreen.scss'
+import { Link } from 'react-router-dom';
 
 import { LoginContext } from '../../context/LoginContext'
-import { Link } from 'react-router-dom'
 
 
-export const LoginScreen=()=>{
+export const RegisterScreen=()=>{
 
-   const {login} = useContext(LoginContext)
+   const {register} = useContext(LoginContext)
 
 
     const [values, setValues] = useState({
@@ -32,13 +28,11 @@ export const LoginScreen=()=>{
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        login(values)
+        register(values)
         
         
     }
   
-
-
 
 return(
 
@@ -63,8 +57,9 @@ return(
                         placeholder="Ingrese su password"
                         />
 
-                    <button className="btn btn-primary ver_mas m-2"  type="submit">Ingresar con mi informacion</button>
-                      <Link to={"/register"} className="btn btn-primary ver_mas m-2">Registrarme</Link>
+                    <button className="btn btn-primary ver_mas m-2"  type="submit">Registrarme</button>
+                    <Link to={"/login"} className="btn btn-primary ver_mas m-2">Ya estoy registrado</Link>
+                    
 
                 </form>
             

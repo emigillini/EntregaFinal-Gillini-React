@@ -1,60 +1,82 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase/config";
+import Swal from 'sweetalert2'
 
 
 
 
 export const LoginContext=createContext();
 
-const MockUsers=[{
-    id:1,
-    email:"admin1@admin1.com",
-    password:"1234"
-    },
-{
-    id:2,
-    email:"admin2@admin1.com",
-    password:"1234"
-    },
-{
-    id:3,
-    email:"admin3@admin1.com",
-    password:"1234"
-}
-]
+
 
 export const LoginProvider=({children})=>{
 const [user, setUser]=useState({
-    email:'',
+    email:null,
     logged:false,
     
-}
+})
 
-)
+
+const register = (values) =>{
+createUserWithEmailAndPassword(auth, values.email, values.password)
+   .catch((err)=>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: err,
+        footer: "Ingrese nuevamente la informacion"
+      }))
+     
+}
 
 const login =(values)=>{
 
-    const Match = MockUsers.find((user)=>user.email === values.email && user.password === values.password)
-
-    if(Match){
-        setUser({
-            email:Match.email,
-            logged:true
-        })
-    }
+    signInWithEmailAndPassword(auth, values.email, values.password)
+  .catch((err)=>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: err,
+        footer: "Ingrese nuevamente la informacion"
+      }))
+     
 }
+
 
 const logout = () => {
-    setUser({
-        email: null,
-        logged: false
-    })
+    signOut(auth)
+        .then(()=>{
+            setUser({
+                email: null,
+                logged: false
+            })
+        })
+  
 }
+
+useEffect(()=>{
+    onAuthStateChanged(auth, (user)=>{
+        if(user){
+            setUser({
+                email:user.email,
+                logged:true
+            })
+        }else{
+            logout()
+        }
+
+    })
+},[])
+
+
 
     return(
         <LoginContext.Provider value={{
             user,
             login,
-            logout
+            logout,
+            register
         }}>
             {children}
         </LoginContext.Provider>

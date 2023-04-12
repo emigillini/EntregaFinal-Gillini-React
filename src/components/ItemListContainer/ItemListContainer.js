@@ -5,6 +5,7 @@ import {ColorRing} from 'react-loader-spinner'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../../firebase/config'
+//import Swal from 'sweetalert2'
 
 
 
@@ -38,6 +39,33 @@ export const ItemListContainer=()=>{
         
     }, [categoryId])
 
+   /* const redirigirLogin=()=>{
+        window.location.href = '/LoginScreen';
+
+    }
+    const alerta = ()=>{
+        Swal.fire({
+            title: 'Estas ingresando al Market Place',
+            text: "Confirme para ingresar",
+         icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ingresar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+            Swal.fire(
+                'Bienvenido',
+                'Carolinska tu mundo',
+                'success'
+            )
+            }else if(result.dismiss === Swal.DismissReason.cancel){
+                redirigirLogin();
+            
+            }
+        })
+    }
+*/
     
     return(
        
@@ -53,6 +81,7 @@ export const ItemListContainer=()=>{
                 </div>
                 
                 :<div className=' row '> 
+                 
         
                 {productos.map((prods)=>(
         
