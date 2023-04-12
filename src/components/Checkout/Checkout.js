@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, query, where, documentId, getDocs, writeBatch  } from "firebase/firestore"
 import Swal from 'sweetalert2'
 import { Navigate } from "react-router"
 import { db } from "../../firebase/config"
@@ -29,7 +29,7 @@ export const Checkout=()=>{
     }
 
 
-    const handleSubmit=(e)=>{
+    const handleSubmit= async (e)=>{
         e.preventDefault()
 
         if(values.contacto.length<3){
@@ -78,17 +78,70 @@ export const Checkout=()=>{
             items:cart,
             total:totalCarrito(),
             fechaYhora:new Date()
-        }  
+        }
+
+
+
+        /*cart.forEach((item => {
+            const docRef = doc(db, "productos", item.id)
+
+            getDoc(docRef)
+            .then((doc)=>{
+                updateDoc(docRef,{
+                    stock: doc.data().stock -item.cantidad
+                })
+            })
+            
+        }));*/
+
+        const prodRef = collection(db, "productos")
+        const q = query(prodRef, where(documentId(), "in", cart.map(item=>item.id)))
+
+        const productos = await getDocs(q)
+        console.log(productos.docs)
+
+        const batch = writeBatch(db)
+        let outStock =[]
+
+        productos.docs.forEach((doc)=>{
+
+            const item = cart.find((prod)=> prod.id === doc.id)
+            if(doc.data().stock >= item.cantidad){
+                batch.update(doc.ref,{
+                    stock: doc.data().stock -item.cantidad
+                })
+            }else{outStock.push(item)}
+        })
+
+        console.log(outStock)
+        if(outStock.length === 0){
+            batch.commit()
+                .then(()=>{
+                    addDoc(orderRef, orden)
+                    .then((doc) =>{
+                        console.log(doc.id)
+                        setOrderId(doc.id)
+                        
+                    })
+                })
+        }else{
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "Sin stock: " +  outStock.map(i=>i.name).join(" , "),
+                background:"#11f1a6"})
+        
+            vaciarCarrito()
+        }
+
 
         const orderRef = collection(db, "orders")
         
-        addDoc(orderRef, orden)
-        .then((doc) =>{
-            console.log(doc.id)
-            setOrderId(doc.id)
-            
-        })
+       
     
+
+
     }
     
     if(orderId){
@@ -100,26 +153,21 @@ export const Checkout=()=>{
                     <h3>Tu compra</h3>
                     <Link onClick={vaciarCarrito} to={"/"} className="btn btn-primary ver_mas">Terminar</Link>
                     <hr/>
-                   
+                
                     {cart.map((item) => (
                 <div  key={item.id} className="container_final">
                     <div >
-                  <h4>{item.name}</h4>
-                  <img className="cart_img" src={item.img} alt={"imagen taza"} />
-                  <div>
-                    <small>
-                      Cantidad: {item.cantidad} -- Precio x un: ${item.precio}
-                    </small>
-                  </div>
-                  </div>
-                  
-                 
-                  
+                <h4>{item.name}</h4>
+                <img className="cart_img" src={item.img} alt={"imagen taza"} />
+                <div>
+                <small>Cantidad: {item.cantidad} -- Precio x un: ${item.precio}</small>
                 </div>
-              ))}
-                    
-                    
                 </div>
+                </div>
+            ))}
+                    
+        
+            </div>
 
         )
     }
