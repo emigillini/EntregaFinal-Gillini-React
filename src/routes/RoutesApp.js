@@ -6,7 +6,6 @@ import { PublicRoutes } from './PublicRoutes';
 import { PrivateRoutes } from './PrivateRoutes';
 
 
-
 export const RoutesApp=()=>{
 
     const { user } = useContext(LoginContext)

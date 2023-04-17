@@ -1,7 +1,6 @@
 import "./Banner.scss" 
 import React, { useState } from 'react';
 
-
 export const Banner = ({ couponCode, discountAmount }) => {
   const [showBanner, setShowBanner] = useState(true);
 

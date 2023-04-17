@@ -9,11 +9,11 @@ import { db } from "../../firebase/config"
 
 export const ItemDetailContainer=()=>{
     const [item, SetItem]= useState(null)
-    const [loading, SetLoading]= useState(true)
+    const [loading, setLoading]= useState(true)
     const {itemId} =useParams()
 
     useEffect(()=>{
-    SetLoading(true)
+    setLoading(true)
 
     const docRef = doc(db, "productos", itemId)
    
@@ -24,10 +24,11 @@ export const ItemDetailContainer=()=>{
                 ...doc.data()
             })
         })
-        .finally(() => {
-            SetLoading(false)
-        })
-}, [itemId])
+        .finally(() => { setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        });
+      },[itemId])
 
 return(
     <div className="container my-5 ">

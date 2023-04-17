@@ -38,7 +38,6 @@ sumarCarrito(itemCarrito)
 
           }
           
-          
         </Card.Body>
       </Card>
     );

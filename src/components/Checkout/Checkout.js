@@ -8,11 +8,9 @@ import { Link } from "react-router-dom"
 import './Checkout.scss'
 
 
-
 export const Checkout=()=>{
 
     const {cart, totalCarrito, vaciarCarrito}=useContext(CartContext)
-
     const [orderId, setOrderId]=useState(null)
 
     const [values, setValues]=useState({
@@ -21,13 +19,13 @@ export const Checkout=()=>{
         telefono:'',
         direccion:''
     })
+
     const handleChange=(e)=>{
         setValues({
             ...values,
             [e.target.name] : e.target.value,
         })
     }
-
 
     const handleSubmit= async (e)=>{
         e.preventDefault()
@@ -49,8 +47,8 @@ export const Checkout=()=>{
                 title: 'Oops...',
                 text: "Incorrecto, ingrese nuevamente su email",
                 background:"#11f1a6"
-              })
-              return
+            })
+            return
         }
         if(values.telefono.length<3 ){
             Swal.fire({
@@ -58,8 +56,8 @@ export const Checkout=()=>{
                 title: 'Oops...',
                 text: "Incorrecto, ingrese nuevamente su telefono",
                 background:"#11f1a6"
-              })
-              return
+            })
+            return
         }
         if(values.direccion.length<3){
             Swal.fire({
@@ -71,7 +69,6 @@ export const Checkout=()=>{
             })
             return
         }
-       
     
         const orden ={
             cliente:values,
@@ -79,20 +76,6 @@ export const Checkout=()=>{
             total:totalCarrito(),
             fechaYhora:new Date()
         }
-
-
-
-        /*cart.forEach((item => {
-            const docRef = doc(db, "productos", item.id)
-
-            getDoc(docRef)
-            .then((doc)=>{
-                updateDoc(docRef,{
-                    stock: doc.data().stock -item.cantidad
-                })
-            })
-            
-        }));*/
 
         const prodRef = collection(db, "productos")
         const q = query(prodRef, where(documentId(), "in", cart.map(item=>item.id)))
@@ -137,11 +120,6 @@ export const Checkout=()=>{
 
 
         const orderRef = collection(db, "orders")
-        
-       
-    
-
-
     }
     
     if(orderId){
@@ -165,19 +143,14 @@ export const Checkout=()=>{
                 </div>
                 </div>
             ))}
-                    
-        
             </div>
-
         )
     }
     if(cart.length === 0){
         return <Navigate to="/"/>
         } 
-
     return(
 
-        
         <div className="login_container ">
         <div className="login">
         <h2>Para terminar la compra ingrese los siguientes datos</h2>
@@ -201,7 +174,6 @@ export const Checkout=()=>{
                         className= "form-control my-2"
                         placeholder="Ingrese su e-mail"
                         />
-                      
                     <input
                         name='telefono'
                         onChange={handleChange}
@@ -210,7 +182,7 @@ export const Checkout=()=>{
                         className= "form-control my-2"
                         placeholder="Ingrese su numero de telefono"
                         />
-                         <input
+                    <input
                         name='direccion'
                         onChange={handleChange}
                         value={values.direccion}
@@ -220,12 +192,9 @@ export const Checkout=()=>{
                         />
 
                     <button className="btn btn-primary ver_mas m-2" type="submit">Ingresar con mi informacion</button>
-                      
                     
-
                 </form>
             
-                    
         </div>
     </div>
     )

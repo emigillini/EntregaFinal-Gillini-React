@@ -17,7 +17,6 @@ const [user, setUser]=useState({
     
 })
 
-
 const register = (values) =>{
 createUserWithEmailAndPassword(auth, values.email, values.password)
    .catch((err)=>
@@ -26,8 +25,7 @@ createUserWithEmailAndPassword(auth, values.email, values.password)
         title: 'Oops...',
         text: err,
         footer: "Ingrese nuevamente la informacion"
-      }))
-     
+    }))
 }
 
 const login =(values)=>{
@@ -39,8 +37,8 @@ const login =(values)=>{
         title: 'Oops...',
         text: err,
         footer: "Ingrese nuevamente la informacion"
-      }))
-     
+    }))
+    
 }
 
 
@@ -52,7 +50,7 @@ const logout = () => {
                 logged: false
             })
         })
-  
+
 }
 
 useEffect(()=>{
@@ -68,8 +66,6 @@ useEffect(()=>{
 
     })
 },[])
-
-
 
     return(
         <LoginContext.Provider value={{

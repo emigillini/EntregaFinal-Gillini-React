@@ -27,7 +27,7 @@ export const Nosotros = () => {
                         <br/>
                         <br/>
                         </div>
-                    : <div>
+                    : <div className='nos'>
                         <CarouselNav />
                     </div>
             }

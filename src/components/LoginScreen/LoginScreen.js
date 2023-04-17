@@ -1,10 +1,5 @@
 import { useContext, useState } from 'react'
 import './LoginScreen.scss'
-
-
-
-
-
 import { LoginContext } from '../../context/LoginContext'
 import { Link } from 'react-router-dom'
 
@@ -17,7 +12,6 @@ export const LoginScreen=()=>{
     const [values, setValues] = useState({
         email:"",
         password:"",
-        
         
     }
     )
@@ -36,9 +30,6 @@ export const LoginScreen=()=>{
         
         
     }
-  
-
-
 
 return(
 
@@ -64,7 +55,7 @@ return(
                         />
 
                     <button className="btn btn-primary ver_mas m-2"  type="submit">Ingresar con mi informacion</button>
-                      <Link to={"/register"} className="btn btn-primary ver_mas m-2">Registrarme</Link>
+                    <Link to={"/register"} className="btn btn-primary ver_mas m-2">Registrarme</Link>
 
                 </form>
             

@@ -1,9 +1,7 @@
 import { useContext, useState } from 'react'
 import './RegisterScreen.scss'
 import { Link } from 'react-router-dom';
-
 import { LoginContext } from '../../context/LoginContext'
-
 
 export const RegisterScreen=()=>{
 
@@ -13,8 +11,6 @@ export const RegisterScreen=()=>{
     const [values, setValues] = useState({
         email:"",
         password:"",
-        
-        
     }
     )
    
@@ -23,7 +19,6 @@ export const RegisterScreen=()=>{
             ...values,
             [e.target.name] : e.target.value,
         })
-    
     }
 
     const handleSubmit=(e)=>{
@@ -32,7 +27,6 @@ export const RegisterScreen=()=>{
         
         
     }
-  
 
 return(
 
