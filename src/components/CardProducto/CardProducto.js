@@ -30,7 +30,6 @@ export const CardProducto = ({title, text, img, cat, id, stock, item}) => {
           <Card.Text>Precio = ${text}</Card.Text>
           <Link to={`/detail/${id}`} className="btn btn-primary btn-lg ver_mas" >VER MAS</Link>
           <Card.Text className='text'>Categoria = {cat}</Card.Text>
-          
           {
             isInCart(item.id)
               ?<Link to={"/cart"} className="btn btn-primary ver_mas">Terminar</Link>  
