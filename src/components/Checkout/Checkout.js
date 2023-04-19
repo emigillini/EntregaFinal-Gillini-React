@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { CartContext } from "../../context/CartContext"
+import { CartContext } from "../../context/cartContext"
 import { collection, addDoc, query, where, documentId, getDocs, writeBatch  } from "firebase/firestore"
 import Swal from 'sweetalert2'
 import { Navigate } from "react-router"

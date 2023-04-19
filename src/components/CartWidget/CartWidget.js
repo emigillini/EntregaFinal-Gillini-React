@@ -1,7 +1,7 @@
 import { FaShoppingCart } from 'react-icons/fa';
 import './CartWidget.scss'
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 
 

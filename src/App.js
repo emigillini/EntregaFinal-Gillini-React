@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from './context/cartContext';
 import {  LoginProvider } from './context/LoginContext';
 import { RoutesApp } from './routes/RoutesApp';
 

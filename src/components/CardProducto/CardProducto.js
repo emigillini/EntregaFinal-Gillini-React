@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useState, useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../context/cartContext';
 
 
 
