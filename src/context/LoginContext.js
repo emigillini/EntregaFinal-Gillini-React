@@ -71,5 +71,4 @@ useEffect(()=>{
             {children}
         </LoginContext.Provider>
     )
-
 }
