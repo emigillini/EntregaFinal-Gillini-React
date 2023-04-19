@@ -26,9 +26,9 @@ export const ItemDetailContainer=()=>{
         })
         .finally(() => { setTimeout(() => {
             setLoading(false);
-          }, 2000);
+        }, 2000);
         });
-      },[itemId])
+    },[itemId])
 
 return(
     <div className="container my-5 ">

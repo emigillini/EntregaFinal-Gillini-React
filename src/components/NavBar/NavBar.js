@@ -8,7 +8,7 @@ import { useContext } from 'react'
 
 export const NavBar = ( )=>{
 
-   const{user, logout}= useContext(LoginContext)
+    const{user, logout}= useContext(LoginContext)
 
     return(
         <header className="header">

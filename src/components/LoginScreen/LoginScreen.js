@@ -6,16 +6,15 @@ import { Link } from 'react-router-dom'
 
 export const LoginScreen=()=>{
 
-   const {login} = useContext(LoginContext)
+    const {login} = useContext(LoginContext)
 
 
     const [values, setValues] = useState({
         email:"",
         password:"",
-        
     }
     )
-   
+
     const handleChange=(e)=>{
         setValues({
             ...values,

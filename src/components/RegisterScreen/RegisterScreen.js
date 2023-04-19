@@ -13,7 +13,7 @@ export const RegisterScreen=()=>{
         password:"",
     }
     )
-   
+
     const handleChange=(e)=>{
         setValues({
             ...values,
@@ -24,7 +24,6 @@ export const RegisterScreen=()=>{
     const handleSubmit=(e)=>{
         e.preventDefault()
         register(values)
-        
         
     }
 

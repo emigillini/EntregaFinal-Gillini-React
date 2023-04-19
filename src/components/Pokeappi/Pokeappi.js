@@ -9,7 +9,7 @@ export const Pokeappi=()=>{
     const [id, setId]= useState(1);
     console.log(pokemon)
     
-   
+
 
     useEffect(()=>{
         fetch ( `https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -38,8 +38,8 @@ export const Pokeappi=()=>{
     return (
 
         <div className="container-fluid col-2 mb-6 my-3" >
-             
-             {
+            
+        {
         pokemon &&
         <div className="mb-6 my-2">
 
@@ -51,14 +51,10 @@ export const Pokeappi=()=>{
         
         </div>
         
-
-        
         }
-     
-
 
         </div>
-       
+    
 
     )
 }

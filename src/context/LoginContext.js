@@ -3,12 +3,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthState
 import { auth } from "../firebase/config";
 import Swal from 'sweetalert2'
 
-
-
-
 export const LoginContext=createContext();
-
-
 
 export const LoginProvider=({children})=>{
 const [user, setUser]=useState({
@@ -40,7 +35,6 @@ const login =(values)=>{
     }))
     
 }
-
 
 const logout = () => {
     signOut(auth)

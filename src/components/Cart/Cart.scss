@@ -32,9 +32,9 @@
 }
 
 .cart_img{
-border: 2px solid black;
-max-width: 500px;
-height: 300px;
+    border: 2px solid black;
+    max-width: 500px;
+    height: 300px;
 }
 .ver_mas{
     background-color: #11f1a6;
@@ -42,7 +42,7 @@ height: 300px;
     color: black;
     font-weight: 500;
     transition: transform .4s; 
-   
+
 }
 .ver_mas:hover {
     transform: scale(1.25); 

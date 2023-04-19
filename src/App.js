@@ -4,11 +4,8 @@ import { CartProvider } from './context/CartContext';
 import {  LoginProvider } from './context/LoginContext';
 import { RoutesApp } from './routes/RoutesApp';
 
-
-
 function App() {
   
-
   return (
     <LoginProvider>
     <CartProvider>

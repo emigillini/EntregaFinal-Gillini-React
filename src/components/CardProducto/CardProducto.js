@@ -18,10 +18,10 @@ export const CardProducto = ({title, text, img, cat, id, stock, item}) => {
         cantidad,
         
     }
-sumarCarrito(itemCarrito)
+  sumarCarrito(itemCarrito)
 
   }
- 
+
     return (
       <Card  style={{ width: '16rem' }} className= "card_container my-1">
         <Card.Img variant="top" src={img} className="image_card"/>

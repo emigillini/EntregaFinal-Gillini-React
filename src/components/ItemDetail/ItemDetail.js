@@ -31,15 +31,14 @@ export const ItemDetail = ({ item }) => {
                 
                 <small className='detail_precio'>Precio : ${item.precio} </small>
                 
-               
                 {
                     isInCart(item.id)
                     ?<Link to={"/cart"} className="btn btn-primary ver_mas">Terminar</Link>
                     :<ItemCount max={item.stock} item={item} cantidad={cantidad} setCantidad={setCantidad} agregar={agregar}/>
                     
                 }
-               <hr/>
-               {item.stock<=15 && <small> Apurate quedan pocas unidades!!!!</small>}
+                <hr/>
+                {item.stock<=15 && <small> Apurate quedan pocas unidades!!!!</small>}
                 
             </div>
             </div>
