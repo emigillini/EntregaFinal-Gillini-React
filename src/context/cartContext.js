@@ -36,5 +36,4 @@ import { useState, createContext } from "react"
     {children}
     </CartContext.Provider>
 )
-
 }
